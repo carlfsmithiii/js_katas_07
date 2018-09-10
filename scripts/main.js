@@ -12,7 +12,8 @@ const functions = {
     join,
     slice,
     flat,
-    flatMap
+    flatMap,
+    of
 }
 
 function forEach(array, callback) {
@@ -129,6 +130,10 @@ function flatMap(array, callback) {
     const newArray = array.slice();
     map(newArray, callback);
     return flat(newArray);
+}
+
+function of(...elements) {
+    return elements;
 }
 
 // console.log(map([1,2,3,4], a => a * 3));

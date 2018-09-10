@@ -106,3 +106,10 @@ test("'flatMap([1,2,3,4], x => [[x * 2]]' returns [[2], [4], [6], [8]]", () => {
     expect(main.flatMap([1,2,3,4], x => [[x * 2]])).toEqual([[2], [4], [6], [8]]);
 });
 
+test("'of(4)' returns [4]", () => {
+    expect(main.of(4)).toEqual([4]);
+});
+
+test("'of(4, 5, 6)' returns [4, 5, 6]", () => {
+    expect(main.of(4, 5, 6)).toEqual([4,5,6]);
+});

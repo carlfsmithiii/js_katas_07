@@ -9,7 +9,8 @@ const functions = {
     concat,
     includes,
     join,
-    slice
+    slice,
+    flat
 }
 
 function forEach(array, callback) {
@@ -98,6 +99,24 @@ function slice(array, beginningIndex, endingIndex) {
         newArray.push(array[i]);
     }
     return newArray;
+}
+
+function flat(array, depth = 1) {
+    if (depth == 1) {
+        const newArray = [];
+        for (let element of array) {
+            if (Array.isArray(element)) {
+                for (let subelement of element) {
+                    newArray.push(subelement);
+                }
+            } else {
+                newArray.push(element);
+            }
+        }
+        return newArray;
+    } else {
+        return flat(flat(array, depth - 1));
+    }
 }
 
 // console.log(map([1,2,3,4], a => a * 3));

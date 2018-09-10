@@ -73,3 +73,15 @@ test("slice([1,2,3,4], 2) returns [3,4]", () => {
 test("slice([1,2,3,4], 2, 3) returns [3]", () => {
     expect(main.slice([1,2,3,4], 2, 3)).toEqual([3]);
 });
+
+test("flat([1,2,[3,4]]) returns [1,2,3,4]", () => {
+    expect(main.flat([1,2,[3,4]])).toEqual([1,2,3,4]);
+});
+
+test("flat([1,2,[3,4,[5,6]]]) returns [1,2,3,4,[5,6]]", () => {
+    expect(main.flat([1,2,[3,4,[5,6]]])).toEqual([1,2,3,4,[5,6]]);
+});
+
+test("flat([1,2,[3,4,[5,6]]], 2) returns [1,2,3,4,5,6]", () => {
+    expect(main.flat([1,2,[3,4,[5,6]]], 2)).toEqual([1,2,3,4,5,6]);
+});

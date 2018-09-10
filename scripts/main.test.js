@@ -45,3 +45,15 @@ test("'every([1,2,3,4,5], a => a > 0' returns 'true'", () => {
 test("'filter([1,2,3,4,5], a => a > 3' returns '[4,5]'", () => {
     expect(main.filter([1,2,3,4,5], a => a > 3)).toEqual([4,5]);
 });
+
+test("'concat([1,2,3],[4,5,6]' returns '[1,2,3,4,5,6]'", () => {
+    expect(main.concat([1,2,3],[4,5,6])).toEqual([1,2,3,4,5,6]);
+});
+
+test("includes([1,2,3], 3) returns true", () => {
+    expect(main.includes([1,2,3], 3)).toBeTruthy();
+});
+
+test("includes([1,2,3], 4) returns false", () => {
+    expect(main.includes([1,2,3], 4)).toBeFalsy();
+});

@@ -5,7 +5,9 @@ const functions = {
     find,
     findIndex, 
     every,
-    filter
+    filter,
+    concat,
+    includes
 }
 
 function forEach(array, callback) {
@@ -65,6 +67,18 @@ function filter(array, callback) {
         }
     }
     return newArray;
+}
+
+function concat(array1, array2) {
+    array = array1.slice();
+    for (let entry of array2) {
+        array.push(entry);
+    }
+    return array;
+}
+
+function includes(array, value) {
+    return findIndex(array, a => a === value) >= 0;
 }
 
 

@@ -136,6 +136,5 @@ function of(...elements) {
     return elements;
 }
 
-// console.log(map([1,2,3,4], a => a * 3));
 
-module.exports = functions;
+//module.exports = functions;

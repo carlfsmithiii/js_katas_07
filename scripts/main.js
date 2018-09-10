@@ -8,6 +8,7 @@ const functions = {
     filter,
     concat,
     includes,
+    indexOf,
     join,
     slice,
     flat
@@ -78,6 +79,10 @@ function concat(array1, array2) {
 
 function includes(array, value) {
     return findIndex(array, a => a === value) >= 0;
+}
+
+function indexOf(array, value) {
+    return findIndex(array, a => a === value);
 }
 
 function join(array, joiningString) {

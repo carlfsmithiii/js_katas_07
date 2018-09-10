@@ -58,6 +58,14 @@ test("includes([1,2,3], 4) returns false", () => {
     expect(main.includes([1,2,3], 4)).toBeFalsy();
 });
 
+test('indexOf([1,2,3], 2) returns 1', () => {
+    expect(main.indexOf([1,2,3], 2)).toBe(1);
+});
+
+test('indexOf([1,2,3], 4) returns -1', () => {
+    expect(main.indexOf([1,2,3], 4)).toBe(-1);
+});
+
 test("join([1,2,3], '') returns '123'", () => {
     expect(main.join([1,2,3], "")).toEqual("123");
 });

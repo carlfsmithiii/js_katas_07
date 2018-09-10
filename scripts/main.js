@@ -33,12 +33,14 @@ function some(array, callback) {
 }
 
 function find(array, callback) {
-    for (let i = 0; i < array.length; i++) {
-        if (callback(array[i], i, array)) {
-            return array[i];
-        }
-    }
-    return undefined;
+    // for (let i = 0; i < array.length; i++) {
+    //     if (callback(array[i], i, array)) {
+    //         return array[i];
+    //     }
+    // }
+    const index = findIndex(array, callback);
+    return index === -1 ? undefined : array[index];
+    // return undefined;
 }
 
 function findIndex(array, callback) {

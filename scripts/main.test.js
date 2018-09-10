@@ -57,3 +57,11 @@ test("includes([1,2,3], 3) returns true", () => {
 test("includes([1,2,3], 4) returns false", () => {
     expect(main.includes([1,2,3], 4)).toBeFalsy();
 });
+
+test("join([1,2,3], '') returns '123'", () => {
+    expect(main.join([1,2,3], "")).toEqual("123");
+});
+
+test("join([1,2,3], ', ') returns '1, 2, 3'", () => {
+    expect(main.join([1,2,3], ", ")).toEqual("1, 2, 3");
+});

@@ -7,7 +7,8 @@ const functions = {
     every,
     filter,
     concat,
-    includes
+    includes,
+    join
 }
 
 function forEach(array, callback) {
@@ -33,14 +34,8 @@ function some(array, callback) {
 }
 
 function find(array, callback) {
-    // for (let i = 0; i < array.length; i++) {
-    //     if (callback(array[i], i, array)) {
-    //         return array[i];
-    //     }
-    // }
     const index = findIndex(array, callback);
     return index === -1 ? undefined : array[index];
-    // return undefined;
 }
 
 function findIndex(array, callback) {
@@ -83,6 +78,16 @@ function includes(array, value) {
     return findIndex(array, a => a === value) >= 0;
 }
 
+function join(array, joiningString) {
+    string = "";
+    for (let i = 0; i < array.length; i++) {
+        if (i !== 0) {
+            string += joiningString;
+        }
+        string += array[i];
+    }
+    return string;
+}
 
 // console.log(map([1,2,3,4], a => a * 3));
 

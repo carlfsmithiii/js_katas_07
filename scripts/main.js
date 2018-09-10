@@ -11,7 +11,8 @@ const functions = {
     indexOf,
     join,
     slice,
-    flat
+    flat,
+    flatMap
 }
 
 function forEach(array, callback) {
@@ -122,6 +123,12 @@ function flat(array, depth = 1) {
     } else {
         return flat(flat(array, depth - 1));
     }
+}
+
+function flatMap(array, callback) {
+    const newArray = array.slice();
+    map(newArray, callback);
+    return flat(newArray);
 }
 
 // console.log(map([1,2,3,4], a => a * 3));

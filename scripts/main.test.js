@@ -93,3 +93,16 @@ test("flat([1,2,[3,4,[5,6]]]) returns [1,2,3,4,[5,6]]", () => {
 test("flat([1,2,[3,4,[5,6]]], 2) returns [1,2,3,4,5,6]", () => {
     expect(main.flat([1,2,[3,4,[5,6]]], 2)).toEqual([1,2,3,4,5,6]);
 });
+
+test("'flatMap([1,2,3,4], x => [x * 2]' returns [2,4,6,8]", () => {
+    expect(main.flatMap([1,2,3,4], x => [x * 2])).toEqual([2,4,6,8]);
+});
+
+test("'flatMap([1,2,3,4], (x, i) => [x + i])' returns [1,3,5,7]", () => {
+    expect(main.flatMap([1,2,3,4], (x, i) => [x + i])).toEqual([1,3,5,7]);
+});
+
+test("'flatMap([1,2,3,4], x => [[x * 2]]' returns [[2], [4], [6], [8]]", () => {
+    expect(main.flatMap([1,2,3,4], x => [[x * 2]])).toEqual([[2], [4], [6], [8]]);
+});
+

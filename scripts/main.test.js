@@ -65,3 +65,11 @@ test("join([1,2,3], '') returns '123'", () => {
 test("join([1,2,3], ', ') returns '1, 2, 3'", () => {
     expect(main.join([1,2,3], ", ")).toEqual("1, 2, 3");
 });
+
+test("slice([1,2,3,4], 2) returns [3,4]", () => {
+    expect(main.slice([1,2,3,4], 2)).toEqual([3,4]);
+});
+
+test("slice([1,2,3,4], 2, 3) returns [3]", () => {
+    expect(main.slice([1,2,3,4], 2, 3)).toEqual([3]);
+});

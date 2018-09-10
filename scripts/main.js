@@ -8,7 +8,8 @@ const functions = {
     filter,
     concat,
     includes,
-    join
+    join,
+    slice
 }
 
 function forEach(array, callback) {
@@ -87,6 +88,16 @@ function join(array, joiningString) {
         string += array[i];
     }
     return string;
+}
+
+function slice(array, beginningIndex, endingIndex) {
+    const newArray = [];
+    end = endingIndex || array.length;
+
+    for (let i = beginningIndex; i < end; i++) {
+        newArray.push(array[i]);
+    }
+    return newArray;
 }
 
 // console.log(map([1,2,3,4], a => a * 3));
